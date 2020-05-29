@@ -2,11 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar';
-import ProductList from './components/ProductList';
-import Details from './components/Details';
-import Cart from './components/Cart';
-import Default from './components/Default';
+import Navbar from './Navbar';
+import ProductList from './ProductList';
+import Details from './Details';
+import Cart from './Cart';
+import Default from './Default';
 
 
 
