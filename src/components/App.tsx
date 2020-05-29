@@ -8,6 +8,7 @@ import ProductList from './ProductList';
 import Details from './Details';
 import Cart from './Cart';
 import Default from './Default';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -27,6 +28,7 @@ function App() {
      <Details />
      <Cart />
      <Default />
+     <Button>Click me!</Button>
 
 
     </React.Fragment>
