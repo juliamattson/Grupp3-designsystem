@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { Switch,Route} from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,6 +8,7 @@ import ProductList from './ProductList';
 import Details from './Details';
 import Cart from './Cart';
 import Default from './Default';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -18,10 +20,15 @@ function App() {
     <React.Fragment>
 
      <Navbar />
-     <ProductList />
+     <Switch>
+      <Route path="/" component={ProductList} />
+      <Route path="/details" component={Details} />
+      <Route path="/details" component={Details} />
+     </Switch>
      <Details />
      <Cart />
      <Default />
+     <Button>Click me!</Button>
 
 
     </React.Fragment>
