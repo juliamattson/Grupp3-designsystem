@@ -20,3 +20,9 @@ color: var(--mainDark)!important;
 .text-bright{
   color: var(--lightBlu);
 }
+.navbar-light .navbar-brand   {
+  color:var(--mainWhite) !important;
+}
+.navbar-light .navbar-text a {
+  color: var(--mainWhite) !important;
+}
