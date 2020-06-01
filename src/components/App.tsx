@@ -8,7 +8,6 @@ import ProductList from './ProductList';
 import Details from './Details';
 import Cart from './Cart';
 import Default from './Default';
-//ändra 
 
 
 
