@@ -3,7 +3,7 @@ import Product from "./Product"
 import { Container, Row, Col } from 'react-bootstrap';
 import Title from "./Title";
 import { ProductConsumer } from './context'
-import product from './Product';
+import { ProductType } from '../data';
 
 
 export default class productList extends Component {
@@ -15,8 +15,8 @@ export default class productList extends Component {
         <Row>
           <ProductConsumer>
             {value => {
-              return value.products.map(product => {
-                return <Product key={product.id} product={product} />;
+              return value.products.map(ProductType => {
+                return <Product key={ProductType.id} product={ProductType} />;
               })
             }}
           </ProductConsumer>
