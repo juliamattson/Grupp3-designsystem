@@ -3,12 +3,11 @@ import { Switch,Route} from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import ProductList from './ProductList';
 import Details from './Details';
 import Cart from './Cart';
 import Default from './Default';
-import Button from 'react-bootstrap/Button';
 
 
 
@@ -19,17 +18,14 @@ function App() {
   return (
     <React.Fragment>
 
-     <Navbar />
+     <NavBar />
      <Switch>
-      <Route path="/" component={ProductList} />
+      <Route exact path="/" component={ProductList} />
       <Route path="/details" component={Details} />
-      <Route path="/details" component={Details} />
+      <Route path="/cart" component={Cart} />
+      <Route component={Default} />
      </Switch>
-     <Details />
-     <Cart />
-     <Default />
-     <Button>Click me!</Button>
-
+     
 
     </React.Fragment>
   );
