@@ -8,7 +8,6 @@ const ProductContext = React.createContext({});
 
 export default class ProductProvider extends Component {
     state = {
-        products: storeProducts,
         detailProduct: detailProduct
     }
     handleDetail = () => {

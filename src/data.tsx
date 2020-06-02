@@ -1,13 +1,14 @@
 export interface ProductType {
-  id: Number
+  id: number
   title: string
   img: string
-  price: Number
+  price: number
   company: string
   info: string
-  inCart: Boolean
-  count: Number
-  total: Number
+  inCart: Boolean,
+  count: number
+  total: number
+
 }
 
 export const storeProducts: ProductType[] = [
