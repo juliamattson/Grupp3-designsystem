@@ -1,17 +1,17 @@
 export interface ProductType {
-  id: Number
+  id: number
   title: string
   img: string
-  price: Number
+  price: number
   company: string
   info: string
   inCart: Boolean,
-  count: Number
-  total: Number
+  count: number
+  total: number
 
 }
 
-export const storeProducts: Product[] = [
+export const storeProducts: ProductType[] = [
   {
     id: 1,
     title: "Google Pixel - Black",

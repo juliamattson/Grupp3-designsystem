@@ -26,3 +26,22 @@ color: var(--mainDark)!important;
 .navbar-light .navbar-text a {
   color: var(--mainWhite) !important;
 }
+
+.card-footer{
+   border-top: transparent;
+   background: transparent;
+   transition:all 1s linear ;
+   -webkit-transition:all 1s linear ;
+   -moz-transition:all 1s linear ;
+   -ms-transition:all 1s linear ;
+   -o-transition:all 1s linear ;
+}
+.cart-btn{
+  position: absolute;
+  border-radius:none !important ;
+  right: 0;
+  -webkit-border-radius:none !important ;
+  -moz-border-radius:none !important ;
+  -ms-border-radius:none !important ;
+  -o-border-radius:none !important ;
+}
