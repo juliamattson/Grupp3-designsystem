@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { ProductConsumer } from './context';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { ProductType } from '../data';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { ProductType } from "../data";
 
 interface props {
-    product: ProductType
+    product: ProductType;
 }
-interface State {
-
-}
-
-
-
+interface State {}
 
 export default class product extends Component<props, State> {
     render() {
@@ -21,10 +15,18 @@ export default class product extends Component<props, State> {
             <Container>
                 <Row>
                     <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Link to="./Details.tsx">
-                                <Card.Img variant="top" src={img} alt="product"
-                                    onClick={() => console.log("You clicked me on the image container!")} />
+                        <Card style={{ width: "18rem" }}>
+                            <Link to="./details/:id">
+                                <Card.Img
+                                    variant="top"
+                                    src={img}
+                                    alt="product"
+                                    onClick={() =>
+                                        console.log(
+                                            "You clicked me on the image container!"
+                                        )
+                                    }
+                                />
                             </Link>
                             <Button
                                 className="cart-btn"
@@ -34,33 +36,30 @@ export default class product extends Component<props, State> {
                                 }}
                             >
                                 {inCart ? (
-                                    <p className="text-capitalize mb-0" >
+                                    <p className="text-capitalize mb-0">
                                         {" "}
-                                in inCart
+                                        in Cart
                                     </p>
                                 ) : (
-                                        <i className="fas fa-cart-plus" />
-                                    )}
-                            </Button>{' '}
+                                    <i className="fas fa-cart-plus" />
+                                )}
+                            </Button>{" "}
                             {/*cart footer*/}
-                        <Row className="card-footer d-flex justify-content-between">
-                            <Col>
-                                <p className="align-self-center mb-0">{title}</p>
-                                <h4 className="text-blue font-italic mb-0">
-                                    
-                                    {price}
-                                    <span>
-                                        kr
-                                        </span>
-                                </h4>
-                            </Col>
-                        </Row>
+                            <Row className="card-footer d-flex justify-content-between">
+                                <Col>
+                                    <p className="align-self-center mb-0">
+                                        {title}
+                                    </p>
+                                    <h4 className="text-blue font-italic mb-0">
+                                        {price}
+                                        <span>kr</span>
+                                    </h4>
+                                </Col>
+                            </Row>
                         </Card>
-                        
                     </Col>
                 </Row>
             </Container>
-        )
+        );
     }
 }
-
