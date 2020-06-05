@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import NavBar from './NavBar';
+import NavBar from './Navbar';
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Card from 'react-bootstrap/Card'
