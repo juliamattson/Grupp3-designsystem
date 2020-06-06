@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductConsumer } from './context';
+import "./Product.css";
+import ProductProvider, { ProductConsumer } from './context';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { ProductType } from '../data';
+import PropTypes from 'prop-types';
+
 
 interface props {
     product: ProductType
@@ -11,18 +14,15 @@ interface State {
 
 }
 
-
-
-
 export default class product extends Component<props, State> {
     render() {
         const { id, title, img, price, inCart } = this.props.product;
         return (
             <Container>
-                <Row>
+                <Row className="product-row">
                     <Col>
                         <Card style={{ width: '18rem' }}>
-                            <Link to="./Details.tsx">
+                            <Link to={"/details/"+id}>
                                 <Card.Img variant="top" src={img} alt="product"
                                     onClick={() => console.log("You clicked me on the image container!")} />
                             </Link>

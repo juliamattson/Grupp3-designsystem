@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { storeProducts, detailProduct } from '../data';
+import { storeProducts  } from '../data';
 
 
 const ProductContext = React.createContext({});
@@ -8,8 +8,26 @@ const ProductContext = React.createContext({});
 
 export default class ProductProvider extends Component {
     state = {
-        detailProduct: detailProduct
+        Products: []
     }
+componentDidMount(){
+this.setProducts();
+
+}
+setProducts = () =>{
+let tempProducts:any[] = [];
+storeProducts.forEach(item =>{
+    const singleItem = { ...item};
+    tempProducts = [...tempProducts, singleItem];
+});
+this.setState(() => {
+
+    return {Products : tempProducts};
+});
+};
+
+
+
     handleDetail = () => {
         console.log("Hello from detail");
 
