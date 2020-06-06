@@ -18,7 +18,6 @@ export default class product extends Component<props, State> {
     render() {
         const { id, title, img, price, inCart } = this.props.product;
         return (
-            <Container>
                 <Row className="product-row">
                     <Col>
                         <Card style={{ width: '18rem' }}>
@@ -59,7 +58,6 @@ export default class product extends Component<props, State> {
                         
                     </Col>
                 </Row>
-            </Container>
         )
     }
 }

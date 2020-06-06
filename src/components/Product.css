@@ -74,3 +74,7 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+.card-img, .card-img-bottom, .card-img-top {
+  flex-shrink: 0;
+  width: fit-content;
+}
