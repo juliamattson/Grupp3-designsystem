@@ -6,7 +6,7 @@ const ProductContext = React.createContext({});
 
 interface Props {}
 
-export interface State {
+interface State {
     cartItems: {
         product: ProductType;
         quantity: number;
@@ -36,9 +36,6 @@ export default class ProductProvider extends Component<Props, State> {
         });
     }; */
 
-    handleDetail = () => {
-        console.log("Hello from detail");
-    };
     addToCart = (product: ProductType) => {
         console.log("Hello from add to cart");
         /* const clonedCart = Object.assign([], this.state.cartItems);
@@ -52,7 +49,6 @@ export default class ProductProvider extends Component<Props, State> {
             <ProductContext.Provider
                 value={{
                     ...this.state,
-                    handleDetail: this.handleDetail,
                     addToCart: this.addToCart,
                 }}
             >
