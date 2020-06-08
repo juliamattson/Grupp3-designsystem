@@ -17,7 +17,7 @@ export default class product extends Component<props, State> {
         return (
             <Row className="product-row">
                 <Col>
-                    <Card style={{ width: "18rem" }}>
+                    <Card style={{ width: "16rem" }}>
                         <Link to={"/details/" + id}>
                             <Card.Img
                                 variant="top"
