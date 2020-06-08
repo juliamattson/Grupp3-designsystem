@@ -61,21 +61,22 @@ export default class Cart extends Component {
                     <Form.Check
                         type="radio"
                         label="Postnord 0:- (Leverans inom 3-5 dagar)"
-                        name="postnord"
+                        name="formHorizontalRadios"
                         id="postnord"
                     />
                       <Form.Check
                           type="radio"
                           label="DHL 39:- (Leverans inom 1-2 dagar)"
-                          name="dhl"
+                          name="formHorizontalRadios"
                           id="dhl"
                       />
                       <Form.Check
                           type="radio"
                           label="Instabox 69:- (Levereras samma dag)"
-                          name="instabox"
+                          name="formHorizontalRadios"
                           id="instabox"
                       />
+
                   </div>
               ))}
               </Card.Text>
