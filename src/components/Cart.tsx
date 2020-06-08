@@ -52,7 +52,32 @@ export default class Cart extends Component {
             <Card.Body>
               <Card.Title>Fraktsätt</Card.Title>
               <Card.Text>
-                Här ska info och alternativ av fraktsätt finnas
+              <Form.Text className="text-muted">
+                  Välj fraktalternativ nedan.
+                </Form.Text>
+                <hr/>
+                {['radio'].map((type) => (
+                  <div key={`default-${type}`} className="mb-3">
+                    <Form.Check
+                        type="radio"
+                        label="Postnord 0:- (Leverans inom 3-5 dagar)"
+                        name="postnord"
+                        id="postnord"
+                    />
+                      <Form.Check
+                          type="radio"
+                          label="DHL 39:- (Leverans inom 1-2 dagar)"
+                          name="dhl"
+                          id="dhl"
+                      />
+                      <Form.Check
+                          type="radio"
+                          label="Instabox 69:- (Levereras samma dag)"
+                          name="instabox"
+                          id="instabox"
+                      />
+                  </div>
+              ))}
               </Card.Text>
             </Card.Body>
           </Card>
