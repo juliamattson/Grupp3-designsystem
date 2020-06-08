@@ -13,7 +13,6 @@ export default class Cart extends Component {
     render() {
         return (
           <div id="cartStyling">
-          {/* <input autoComplete={true} /> */}
           <CardGroup>
           <Card>
             <Card.Body>
@@ -24,16 +23,16 @@ export default class Cart extends Component {
                 </Form.Text>
                 <hr/>
               <Form.Group controlId="formBasicName">
-                <Form.Control type="email" placeholder="För och efternamn" />
+                <Form.Control autoComplete="on" type="text" placeholder="För och efternamn" />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Email-adress" />
+                <Form.Control autoComplete="on" type="email" placeholder="Email-adress" />
               </Form.Group>
               <Form.Group controlId="formBasicNumber">
-                <Form.Control type="email" placeholder="Telefonnummer" />
+                <Form.Control autoComplete="on" type="text" placeholder="Telefonnummer" />
               </Form.Group>
               <Form.Group controlId="formBasicAdress">
-                <Form.Control type="email" placeholder="Adress" />
+                <Form.Control autoComplete="on" type="text" placeholder="Adress" />
               </Form.Group>
               <Button variant="primary" type="submit">
                 Spara
