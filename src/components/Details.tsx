@@ -6,9 +6,7 @@ import product from "./Product";
 
 interface Props extends RouteComponentProps<{ id: string }> {}
 
-const foundProduct = storeProducts.find((product) => {
-    return product.id == Number(this.props.match.params.id);
-});
+
 
 export default class Details extends Component<Props> {
     render() {
