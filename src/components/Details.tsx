@@ -37,7 +37,7 @@ export default class Details extends Component<Props> {
                                 </p>
                                 <h2>Pris: {foundProduct.price} kr</h2>
                                 <div className="BtnContainer">
-                                    <NavLink to="/shop">
+                                    <NavLink to="/">
                                         <button className="BackButton">
                                             Tillbaks till startsidan
                                         </button>
