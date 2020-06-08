@@ -2,16 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Product.css";
 import ProductProvider, { ProductConsumer } from "./context";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Col, Card, Button } from "react-bootstrap";
 import { ProductType } from "../data";
-import PropTypes from "prop-types";
 
 interface props {
     product: ProductType;
 }
 interface State {}
 
-export default class product extends Component<props, State> {
+export default class Product extends Component<props, State> {
     render() {
         const { id, title, img, price, inCart } = this.props.product;
         return (
