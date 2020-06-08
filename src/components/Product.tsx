@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import "./Product.css";
 import ProductProvider, { ProductConsumer } from './context';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { ProductType } from '../data';
@@ -17,8 +18,7 @@ export default class product extends Component<props, State> {
     render() {
         const { id, title, img, price, inCart } = this.props.product;
         return (
-            <Container>
-                <Row>
+                <Row className="product-row">
                     <Col>
                         <Card style={{ width: '18rem' }}>
                             <Link to={"/details/"+id}>
@@ -58,7 +58,6 @@ export default class product extends Component<props, State> {
                         
                     </Col>
                 </Row>
-            </Container>
         )
     }
 }
