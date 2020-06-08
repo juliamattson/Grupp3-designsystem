@@ -10,7 +10,7 @@ export default class productList extends Component {
   render() {
     return (
       <Container>
-        <Title name="our" title="products" />
+        <Title name="Våra" title=" Produkter" />
         <Row>
           
             {
