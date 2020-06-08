@@ -7,16 +7,16 @@ export default class NavBar extends Component {
     render() {
         return (
             <Navbar bg="dark" className="navbar">
-                <Navbar.Brand href="/">Store</Navbar.Brand>
+                <Navbar.Brand href="/">PhoneStore</Navbar.Brand>
                 <Link to="/" className="nav-link">
-                    Products
+                    Produkter
                 </Link>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Link to="/cart" className="nav-link">
                         <Button>
                             <i className="fas fa-cart-plus"></i>
-                            Cart
+                            Kundvagn
                         </Button>
                     </Link>
                 </Navbar.Collapse>
