@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Product.css";
+import "./cart.css";
 import { CartContext, CartConsumer, ContextState } from "./context/cartContext";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import { ProductType, storeProducts } from "../data";
@@ -30,7 +30,7 @@ export default class CartItem extends Component<Props, State> {
                     return (
                         <Row>
                             <Col>
-                                <Card style={{ width: "16rem" }}>
+                                <Card style={{ maxWidth: "90%" }}>
                                     <Card.Img
                                         src={img}
                                         style={{
@@ -40,9 +40,24 @@ export default class CartItem extends Component<Props, State> {
                                     />
                                     {title}
                                     <br />
-                                    Pris: {price} kr
+                                    Pris: {price * quantity} kr
                                     <br />
-                                    Antal: {quantity}
+                                    <div className="quantityButtonDiv">
+                                        Antal:{" "}
+                                        <Button
+                                            variant="light"
+                                            className="quantityButton"
+                                        >
+                                            -
+                                        </Button>{" "}
+                                        {quantity}{" "}
+                                        <Button
+                                            variant="light"
+                                            className="quantityButton"
+                                        >
+                                            +
+                                        </Button>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>

@@ -7,3 +7,14 @@
 .cardStyling {
     margin: 10px;
 }
+
+.quantityButton {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+.quantityButtonDiv {
+    display: flex;
+    justify-content: start;
+}

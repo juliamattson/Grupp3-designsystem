@@ -138,27 +138,32 @@ export default class Cart extends Component<{}, State> {
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
-                            </CardGroup>
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Kundvagn</Card.Title>
-                                    {contextData.cartItems.length ? (
-                                        contextData.cartItems.map(
-                                            (cartItem, index) => (
-                                                <CartItem
-                                                    key={cartItem.product.id}
-                                                    cartItems={cartItem}
-                                                />
+                                <Card>
+                                    <Card.Body>
+                                        <Card.Title>Kundvagn</Card.Title>
+                                        {contextData.cartItems.length ? (
+                                            contextData.cartItems.map(
+                                                (cartItem, index) => (
+                                                    <CartItem
+                                                        key={
+                                                            cartItem.product.id
+                                                        }
+                                                        cartItems={cartItem}
+                                                    />
+                                                )
                                             )
-                                        )
-                                    ) : (
-                                        <h4>No items in cart...</h4>
-                                    )}
-                                    <Button variant="primary">
-                                        Slutför köp
-                                    </Button>
-                                </Card.Body>
-                            </Card>
+                                        ) : (
+                                            <h4>No items in cart...</h4>
+                                        )}
+                                        <Button
+                                            variant="primary"
+                                            style={{ marginTop: "10px" }}
+                                        >
+                                            Slutför köp
+                                        </Button>
+                                    </Card.Body>
+                                </Card>
+                            </CardGroup>
                         </div>
                     );
                 }}
