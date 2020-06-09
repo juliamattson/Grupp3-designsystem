@@ -6,8 +6,6 @@ import product from "./Product";
 
 interface Props extends RouteComponentProps<{ id: string }> {}
 
-
-
 export default class Details extends Component<Props> {
     render() {
         // this.props.match.params.id;

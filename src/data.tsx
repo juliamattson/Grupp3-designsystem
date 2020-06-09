@@ -1,14 +1,13 @@
 export interface ProductType {
-  id: number
-  title: string
-  img: string
-  price: number
-  company: string
-  info: string
-  inCart: Boolean,
-  count: number
-  total: number
-
+    id: number;
+    title: string;
+    img: string;
+    price: number;
+    company: string;
+    info: string;
+    inCart: Boolean;
+    count: number;
+    total: number;
 }
 
 export const storeProducts: ProductType[] = [
@@ -109,4 +108,3 @@ export const storeProducts: ProductType[] = [
     total: 0
   }
 ];
-
