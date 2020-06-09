@@ -141,6 +141,7 @@ export default class Cart extends Component<{}, State> {
                                 <Card>
                                     <Card.Body>
                                         <Card.Title>Kundvagn</Card.Title>
+                                        <hr />
                                         {contextData.cartItems.length ? (
                                             contextData.cartItems.map(
                                                 (cartItem, index) => (
@@ -155,6 +156,7 @@ export default class Cart extends Component<{}, State> {
                                         ) : (
                                             <h4>No items in cart...</h4>
                                         )}
+                                        <h4>Summa: </h4>
                                         <Button
                                             variant="primary"
                                             style={{ marginTop: "10px" }}

@@ -30,7 +30,16 @@ export default class CartItem extends Component<Props, State> {
                     return (
                         <Row>
                             <Col>
-                                <Card style={{ maxWidth: "90%" }}>
+                                <Card
+                                    style={{
+                                        maxWidth: "90%",
+                                        maxHeight: "90%",
+                                        borderBottom: "none",
+                                        borderRight: "none",
+                                        borderLeft: "none",
+                                        borderTop: "none",
+                                    }}
+                                >
                                     <Card.Img
                                         src={img}
                                         style={{
@@ -58,6 +67,7 @@ export default class CartItem extends Component<Props, State> {
                                             +
                                         </Button>
                                     </div>
+                                    <hr />
                                 </Card>
                             </Col>
                         </Row>
