@@ -15,8 +15,7 @@ export default class NavBar extends Component {
                 <Navbar.Collapse className="justify-content-end">
                     <Link to="/cart" className="nav-link">
                         <Button>
-                            <i className="fas fa-cart-plus"></i>
-                            Kundvagn
+                            <i className="fas fa-cart-plus"></i> Kundvagn
                         </Button>
                     </Link>
                 </Navbar.Collapse>

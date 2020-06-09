@@ -144,17 +144,20 @@ export default class Cart extends Component<{}, State> {
                                         <hr />
                                         {contextData.cartItems.length ? (
                                             contextData.cartItems.map(
-                                                (cartItem, index) => (
-                                                    <CartItem
-                                                        key={
-                                                            cartItem.product.id
-                                                        }
-                                                        cartItems={cartItem}
-                                                    />
-                                                )
+                                                (cartItem, index) => {
+                                                    return (
+                                                        <CartItem
+                                                            key={
+                                                                cartItem.product
+                                                                    .id
+                                                            }
+                                                            cartItems={cartItem}
+                                                        />
+                                                    );
+                                                }
                                             )
                                         ) : (
-                                            <h4>No items in cart...</h4>
+                                            <h4>Kundvagnen är tom...</h4>
                                         )}
                                         <h4>Summa: </h4>
                                         <Button
