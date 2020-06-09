@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { storeProducts, ProductType } from "../data";
 import Product from "./Product";
 
-const ProductContext = React.createContext({});
+/* const ProductContext = React.createContext({});
 
 interface Props {}
 
@@ -18,11 +18,11 @@ export default class ProductProvider extends Component<Props, State> {
         super(props);
         this.state = {
             cartItems: [],
-            /* Products: [] */
+            Products: []
         };
     }
 
-    /* componentDidMount() {
+    componentDidMount() {
         this.setProducts();
     }
     setProducts = () => {
@@ -34,15 +34,15 @@ export default class ProductProvider extends Component<Props, State> {
         this.setState(() => {
             return { Products: tempProducts };
         });
-    }; */
+    };
 
     addToCart = (product: ProductType) => {
         console.log("Hello from add to cart");
-        /* const clonedCart = Object.assign([], this.state.cartItems);
+        const clonedCart = Object.assign([], this.state.cartItems);
         clonedCart.push(product);
         this.setState({ cartItems: clonedCart }, () => {
             console.log(this.state);
-        }); */
+        });
     };
     render() {
         return (
@@ -60,3 +60,4 @@ export default class ProductProvider extends Component<Props, State> {
 
 const ProductConsumer = ProductContext.Consumer;
 export { ProductProvider, ProductConsumer };
+ */
