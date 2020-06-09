@@ -30,40 +30,8 @@ export default class Product extends Component<Props, State> {
                 {(contextData: ContextState) => {
                     return (
                         <Row className="product-row">
-                <Col>
-                    <Card style={{ width: "16rem" }}>
-                        <Link to={"/details/" + id}>
-                            <Card.Img
-                                variant="top"
-                                src={img}
-                                alt="product"
-                                onClick={() =>
-                                    console.log(
-                                        "You clicked me on the image container!"
-                                    )
-                                }
-                            />
-                        </Link>
-                        <Button
-                            className="cart-btn"
-                            disabled={inCart ? true : false}
-                            onClick={() => {
-                                console.log("Added to cart!!!");
-                            }}
-                        >
-                            {inCart ? (
-                                <p className="text-capitalize mb-0">
-                                    {" "}
-                                    in inCart
-                                </p>
-                            ) : (
-                                <i className="fas fa-cart-plus" />
-                            )}
-                        </Button>{" "}
-                        {/*cart footer*/}
-                        <Row className="card-footer d-flex justify-content-between">
                             <Col>
-                                <Card style={{ width: "18rem" }}>
+                                <Card style={{ width: "16rem" }}>
                                     <Link to={"/details/" + id}>
                                         <Card.Img
                                             variant="top"
@@ -80,9 +48,7 @@ export default class Product extends Component<Props, State> {
                                         className="cart-btn"
                                         disabled={inCart ? true : false}
                                         onClick={() => {
-                                            contextData.addProductToCart(
-                                                this.props.product
-                                            );
+                                            console.log("Added to cart!!!");
                                         }}
                                     >
                                         {inCart ? (
@@ -97,16 +63,56 @@ export default class Product extends Component<Props, State> {
                                     {/*cart footer*/}
                                     <Row className="card-footer d-flex justify-content-between">
                                         <Col>
-                                            <p className="align-self-center mb-0">
-                                                {title}
-                                            </p>
-                                            <h4 className="text-blue font-italic mb-0">
-                                                {price}
-                                                <span>kr</span>
-                                            </h4>
+                                            <Card style={{ width: "18rem" }}>
+                                                <Link to={"/details/" + id}>
+                                                    <Card.Img
+                                                        variant="top"
+                                                        src={img}
+                                                        alt="product"
+                                                        onClick={() =>
+                                                            console.log(
+                                                                "You clicked me on the image container!"
+                                                            )
+                                                        }
+                                                    />
+                                                </Link>
+                                                <Button
+                                                    className="cart-btn"
+                                                    disabled={
+                                                        inCart ? true : false
+                                                    }
+                                                    onClick={() => {
+                                                        contextData.addProductToCart(
+                                                            this.props.product
+                                                        );
+                                                    }}
+                                                >
+                                                    {inCart ? (
+                                                        <p className="text-capitalize mb-0">
+                                                            {" "}
+                                                            in inCart
+                                                        </p>
+                                                    ) : (
+                                                        <i className="fas fa-cart-plus" />
+                                                    )}
+                                                </Button>{" "}
+                                                {/*cart footer*/}
+                                                <Row className="card-footer d-flex justify-content-between">
+                                                    <Col>
+                                                        <p className="align-self-center mb-0">
+                                                            {title}
+                                                        </p>
+                                                        <h4 className="text-blue font-italic mb-0">
+                                                            {price}
+                                                            <span>kr</span>
+                                                        </h4>
+                                                    </Col>
+                                                </Row>
+                                            </Card>
                                         </Col>
                                     </Row>
                                 </Card>
+                                );
                             </Col>
                         </Row>
                     );
