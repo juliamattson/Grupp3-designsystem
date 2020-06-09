@@ -8,8 +8,6 @@ interface Props extends RouteComponentProps<{ id: string }> {}
 
 export default class Details extends Component<Props> {
     render() {
-        // this.props.match.params.id;
-
         const foundProduct = storeProducts.find((product) => {
             return product.id == Number(this.props.match.params.id);
         });
