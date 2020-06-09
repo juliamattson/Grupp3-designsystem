@@ -48,7 +48,9 @@ export default class Product extends Component<Props, State> {
                                         className="cart-btn"
                                         disabled={inCart ? true : false}
                                         onClick={() => {
-                                            console.log("Added to cart!!!");
+                                            contextData.addProductToCart(
+                                                this.props.product
+                                            );
                                         }}
                                     >
                                         {inCart ? (
@@ -61,7 +63,7 @@ export default class Product extends Component<Props, State> {
                                         )}
                                     </Button>{" "}
                                     {/*cart footer*/}
-                                    <Row className="card-footer d-flex justify-content-between">
+                                    {/* <Row className="card-footer d-flex justify-content-between">
                                         <Col>
                                             <Card style={{ width: "18rem" }}>
                                                 <Link to={"/details/" + id}>
@@ -96,7 +98,7 @@ export default class Product extends Component<Props, State> {
                                                         <i className="fas fa-cart-plus" />
                                                     )}
                                                 </Button>{" "}
-                                                {/*cart footer*/}
+                                                
                                                 <Row className="card-footer d-flex justify-content-between">
                                                     <Col>
                                                         <p className="align-self-center mb-0">
@@ -110,9 +112,8 @@ export default class Product extends Component<Props, State> {
                                                 </Row>
                                             </Card>
                                         </Col>
-                                    </Row>
+                                    </Row> */}
                                 </Card>
-                                );
                             </Col>
                         </Row>
                     );
