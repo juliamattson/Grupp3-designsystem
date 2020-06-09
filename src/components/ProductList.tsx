@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import Product from "./Product"
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { Component } from "react";
+import Product from "./Product";
+import { Container, Row } from "react-bootstrap";
 import Title from "./Title";
-import {storeProducts} from '../data';
-
+import { storeProducts } from "../data";
 
 export default class productList extends Component {
   
   render() {
     return (
       <Container>
-        <Title name="our" title="products" />
+        <Title name="Våra" title=" Produkter" />
         <Row>
           
             {
@@ -23,4 +22,3 @@ export default class productList extends Component {
     )
   }
 }
-

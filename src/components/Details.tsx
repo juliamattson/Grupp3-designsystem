@@ -6,8 +6,6 @@ import product from "./Product";
 
 interface Props extends RouteComponentProps<{ id: string }> {}
 
-
-
 export default class Details extends Component<Props> {
     render() {
         // this.props.match.params.id;
@@ -30,16 +28,16 @@ export default class Details extends Component<Props> {
                             </div>
                             <div className="InfoContainer">
                                 <h1 className="Title">{foundProduct.title}</h1>
-                                <h3>Made by: {foundProduct.company}</h3>
+                                <h3>Märke: {foundProduct.company}</h3>
                                 <p>
-                                    <strong>Description: </strong>
+                                    <strong>Beskrivning: </strong>
                                     {foundProduct.info}
                                 </p>
-                                <h2>Price: {foundProduct.price} kr</h2>
+                                <h2>Pris: {foundProduct.price} kr</h2>
                                 <div className="BtnContainer">
-                                    <NavLink to="/shop">
+                                    <NavLink to="/">
                                         <button className="BackButton">
-                                            Back to Shop
+                                            Tillbaks till startsidan
                                         </button>
                                     </NavLink>
                                     <button
@@ -51,7 +49,7 @@ export default class Details extends Component<Props> {
                                         {foundProduct.inCart ? (
                                             <span>in Cart</span>
                                         ) : (
-                                            <span>ADD To CART</span>
+                                            <span>Lägg till i kundvagn</span>
                                         )}
                                     </button>
                                 </div>
