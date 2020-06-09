@@ -72,6 +72,33 @@ export default class Cart extends Component<{}, State> {
                                         <Card.Text>
                                             Här ska info och alternativ av
                                             betalsätt finnas
+                                            <Form>
+                                                {["radio"].map((type) => (
+                                                    <div
+                                                        key={`default-${type}`}
+                                                        className="mb-3"
+                                                    >
+                                                        <Form.Check
+                                                            type="radio"
+                                                            label="Kort "
+                                                            name="formHorizontalRadios"
+                                                            id="formHorizontalRadios1"
+                                                        />
+                                                        <Form.Check
+                                                            type="radio"
+                                                            label="Swish "
+                                                            name="formHorizontalRadios"
+                                                            id="formHorizontalRadios2"
+                                                        />
+                                                        <Form.Check
+                                                            type="radio"
+                                                            label="Pay Pal"
+                                                            name="formHorizontalRadios"
+                                                            id="formHorizontalRadios3"
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </Form>
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
