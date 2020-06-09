@@ -9,6 +9,7 @@ import Form from "react-bootstrap/Form";
 import "./cart.css";
 import CardGroup from "react-bootstrap/CardGroup";
 import { CartConsumer, ContextState } from "./context/cartContext";
+import CartItem from "./CartItem";
 
 export interface State {}
 
@@ -116,33 +117,12 @@ export default class Cart extends Component<{}, State> {
                                     <Card.Title>Kundvagn</Card.Title>
                                     {contextData.cartItems.length ? (
                                         contextData.cartItems.map(
-                                            (cartItems, index) => {
-                                                return (
-                                                    <div
-                                                        key={
-                                                            cartItems.product
-                                                                .id && index
-                                                        }
-                                                    >
-                                                        <h3>
-                                                            Name:{" "}
-                                                            {
-                                                                cartItems
-                                                                    .product
-                                                                    .title
-                                                            }
-                                                        </h3>
-                                                        <h3>
-                                                            Price:{" "}
-                                                            {
-                                                                cartItems
-                                                                    .product
-                                                                    .price
-                                                            }
-                                                        </h3>
-                                                    </div>
-                                                );
-                                            }
+                                            (cartItem, index) => (
+                                                <CartItem
+                                                    key={cartItem.product.id}
+                                                    cartItems={cartItem}
+                                                />
+                                            )
                                         )
                                     ) : (
                                         <h4>No items in cart...</h4>

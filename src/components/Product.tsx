@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Product.css";
-import { CartContext, CartConsumer, ContextState } from "./context/cartContext";
+import { CartConsumer, ContextState } from "./context/cartContext";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import { ProductType, storeProducts } from "../data";
 
