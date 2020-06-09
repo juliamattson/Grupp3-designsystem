@@ -31,6 +31,15 @@ export class CartProvider extends Component<{}, ProviderState> {
             const newCartItem = { product: product, quantity: 1 };
 
             clonedCart.push(newCartItem);
+        } else {
+            let foundCartItem: any = clonedCart.find(
+                (cartItem: { product: ProductType; quantity: number }) => {
+                    return cartItem;
+                }
+            );
+            if (foundCartItem != undefined) {
+                foundCartItem.quantity += 1;
+            }
         }
 
         this.setState({ cartItems: clonedCart }, () => {
