@@ -52,12 +52,6 @@ export class CartProvider extends Component<{}, ProviderState> {
     removeProductFromCart = (product: ProductType) => {
         let clonedCart = Object.assign([], this.state.cartItems);
 
-        let foundItemId = clonedCart.find(
-            (cartItem: { product: ProductType; quantity: number }) => {
-                return cartItem.product.id === product.id;
-            }
-        );
-
         let foundCartItem: any = clonedCart.find(
             (cartItem: { product: ProductType; quantity: number }) => {
                 if (cartItem.product.id === product.id) {
@@ -79,6 +73,18 @@ export class CartProvider extends Component<{}, ProviderState> {
         });
     };
 
+    getCartTotal = () => {
+        let clonedCart = Object.assign([], this.state.cartItems);
+        let cartTotal = 0;
+
+        clonedCart.forEach(
+            (cartItem: { product: ProductType; quantity: number }) => {
+                cartTotal += cartItem.product.price * cartItem.quantity;
+            }
+        );
+        return cartTotal;
+    };
+
     render() {
         return (
             <CartContext.Provider
@@ -86,6 +92,7 @@ export class CartProvider extends Component<{}, ProviderState> {
                     ...this.state,
                     addProductToCart: this.addProductToCart,
                     removeProductFromCart: this.removeProductFromCart,
+                    getCartTotal: this.getCartTotal,
                 }}
             >
                 {this.props.children}

@@ -159,7 +159,9 @@ export default class Cart extends Component<{}, State> {
                                         ) : (
                                             <h4>Kundvagnen är tom...</h4>
                                         )}
-                                        <h4>Summa: </h4>
+                                        <h4>
+                                            Summa: {contextData.getCartTotal()}
+                                        </h4>
                                         <Button
                                             variant="primary"
                                             style={{ marginTop: "10px" }}
