@@ -34,6 +34,7 @@ export default class Cart extends Component<{}, State> {
                             Slutför köp
                         </Button>
                     );
+                    const momsShipping = "(Inklusive moms och frakt)";
                     return (
                         <div id="cartStyling">
                             <CardGroup>
@@ -177,6 +178,11 @@ export default class Cart extends Component<{}, State> {
                                                 ? priceText
                                                 : ""}
                                         </h4>
+                                        <h6>
+                                            {contextData.getNumOfItems() > 0
+                                                ? momsShipping
+                                                : ""}
+                                        </h6>
                                         {contextData.getNumOfItems() > 0
                                             ? confirmButton
                                             : ""}
