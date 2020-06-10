@@ -6,6 +6,7 @@ export interface ContextState extends ProviderState {
     addProductToCart: (product: ProductType) => void;
     removeProductFromCart: (product: ProductType) => void;
     getCartTotal: () => number;
+    getNumOfItems: () => number;
 }
 
 export const CartContext = createContext<ContextState>({
@@ -25,6 +26,9 @@ export const CartContext = createContext<ContextState>({
         );
     },
     getCartTotal: () => {
+        return 0;
+    },
+    getNumOfItems: () => {
         return 0;
     },
 });

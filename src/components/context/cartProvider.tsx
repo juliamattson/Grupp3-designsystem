@@ -85,6 +85,18 @@ export class CartProvider extends Component<{}, ProviderState> {
         return cartTotal;
     };
 
+    getNumOfItems = () => {
+        let clonedCart = Object.assign([], this.state.cartItems);
+        let numOfItems = 0;
+
+        clonedCart.forEach(
+            (cartItem: { product: ProductType; quantity: number }) => {
+                numOfItems += cartItem.quantity;
+            }
+        );
+        return numOfItems;
+    };
+
     render() {
         return (
             <CartContext.Provider
@@ -93,6 +105,7 @@ export class CartProvider extends Component<{}, ProviderState> {
                     addProductToCart: this.addProductToCart,
                     removeProductFromCart: this.removeProductFromCart,
                     getCartTotal: this.getCartTotal,
+                    getNumOfItems: this.getNumOfItems,
                 }}
             >
                 {this.props.children}
