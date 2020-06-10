@@ -16,5 +16,5 @@
 
 .quantityButtonDiv {
     display: flex;
-    justify-content: start;
+    align-items: flex-start;
 }
