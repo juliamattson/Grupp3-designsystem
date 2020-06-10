@@ -15,6 +15,7 @@ export interface State {}
 
 export default class Cart extends Component<{}, State> {
     render() {
+        let shippingCost = 39;
         return (
             <CartConsumer>
                 {(contextData: ContextState) => {
@@ -117,18 +118,21 @@ export default class Cart extends Component<{}, State> {
                                                 >
                                                     <Form.Check
                                                         type="radio"
+                                                        value="0"
                                                         label="Postnord 0:- (Leverans inom 3-5 dagar)"
                                                         name="formHorizontalRadios"
                                                         id="postnord"
                                                     />
                                                     <Form.Check
                                                         type="radio"
+                                                        value="39"
                                                         label="DHL 39:- (Leverans inom 1-2 dagar)"
                                                         name="formHorizontalRadios"
                                                         id="dhl"
                                                     />
                                                     <Form.Check
                                                         type="radio"
+                                                        value="69"
                                                         label="Instabox 69:- (Levereras samma dag)"
                                                         name="formHorizontalRadios"
                                                         id="instabox"
@@ -160,7 +164,9 @@ export default class Cart extends Component<{}, State> {
                                             <h4>Kundvagnen är tom...</h4>
                                         )}
                                         <h4>
-                                            Summa: {contextData.getCartTotal()}
+                                            Summa:{" "}
+                                            {contextData.getCartTotal() +
+                                                shippingCost}
                                         </h4>
                                         <Button
                                             variant="primary"

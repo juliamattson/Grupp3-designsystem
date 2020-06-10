@@ -35,7 +35,7 @@ export default class Details extends Component<Props> {
                                 <div className="BtnContainer">
                                     <NavLink to="/">
                                         <button className="BackButton">
-                                            Tillbaks till startsidan
+                                            Tillbaka till startsidan
                                         </button>
                                     </NavLink>
                                     <button
