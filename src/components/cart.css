@@ -7,3 +7,23 @@
 .cardStyling {
     margin: 10px;
 }
+
+.quantityButton {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+.quantityButtonDiv {
+    display: flex;
+    align-items: flex-start;
+}
+
+.cartItemCard {
+    max-width: 90%;
+    max-height: 90%;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}

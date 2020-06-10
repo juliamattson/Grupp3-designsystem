@@ -34,7 +34,9 @@ export class CartProvider extends Component<{}, ProviderState> {
         } else {
             let foundCartItem: any = clonedCart.find(
                 (cartItem: { product: ProductType; quantity: number }) => {
-                    return cartItem;
+                    if (cartItem.product.id === product.id) {
+                        return cartItem;
+                    }
                 }
             );
             if (foundCartItem != undefined) {
@@ -47,12 +49,63 @@ export class CartProvider extends Component<{}, ProviderState> {
         });
     };
 
+    removeProductFromCart = (product: ProductType) => {
+        let clonedCart = Object.assign([], this.state.cartItems);
+
+        let foundCartItem: any = clonedCart.find(
+            (cartItem: { product: ProductType; quantity: number }) => {
+                if (cartItem.product.id === product.id) {
+                    return cartItem;
+                }
+            }
+        );
+        if (foundCartItem.quantity > 1) {
+            foundCartItem.quantity -= 1;
+        } else {
+            clonedCart = clonedCart.filter(
+                (cartItem: { product: ProductType; quantity: number }) =>
+                    cartItem.product.id != product.id
+            );
+        }
+
+        this.setState({ cartItems: clonedCart }, () => {
+            console.log(this.state);
+        });
+    };
+
+    getCartTotal = () => {
+        let clonedCart = Object.assign([], this.state.cartItems);
+        let cartTotal = 0;
+
+        clonedCart.forEach(
+            (cartItem: { product: ProductType; quantity: number }) => {
+                cartTotal += cartItem.product.price * cartItem.quantity;
+            }
+        );
+        return cartTotal;
+    };
+
+    getNumOfItems = () => {
+        let clonedCart = Object.assign([], this.state.cartItems);
+        let numOfItems = 0;
+
+        clonedCart.forEach(
+            (cartItem: { product: ProductType; quantity: number }) => {
+                numOfItems += cartItem.quantity;
+            }
+        );
+        return numOfItems;
+    };
+
     render() {
         return (
             <CartContext.Provider
                 value={{
                     ...this.state,
                     addProductToCart: this.addProductToCart,
+                    removeProductFromCart: this.removeProductFromCart,
+                    getCartTotal: this.getCartTotal,
+                    getNumOfItems: this.getNumOfItems,
                 }}
             >
                 {this.props.children}
