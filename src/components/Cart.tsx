@@ -19,6 +19,13 @@ export default class Cart extends Component<{}, State> {
         return (
             <CartConsumer>
                 {(contextData: ContextState) => {
+                    const totalCost = contextData.getCartTotal() + shippingCost;
+                    const priceText = "Summa: " + totalCost + " kr";
+                    const confirmButton = (
+                        <Button variant="primary" style={{ marginTop: "10px" }}>
+                            Slutför köp
+                        </Button>
+                    );
                     return (
                         <div id="cartStyling">
                             <CardGroup>
@@ -164,16 +171,13 @@ export default class Cart extends Component<{}, State> {
                                             <h4>Kundvagnen är tom...</h4>
                                         )}
                                         <h4>
-                                            Summa:{" "}
-                                            {contextData.getCartTotal() +
-                                                shippingCost}
+                                            {contextData.getNumOfItems() > 0
+                                                ? priceText
+                                                : ""}
                                         </h4>
-                                        <Button
-                                            variant="primary"
-                                            style={{ marginTop: "10px" }}
-                                        >
-                                            Slutför köp
-                                        </Button>
+                                        {contextData.getNumOfItems() > 0
+                                            ? confirmButton
+                                            : ""}
                                     </Card.Body>
                                 </Card>
                             </CardGroup>
