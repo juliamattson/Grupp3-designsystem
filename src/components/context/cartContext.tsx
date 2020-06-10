@@ -4,6 +4,7 @@ import { ProductType } from "../../data";
 
 export interface ContextState extends ProviderState {
     addProductToCart: (product: ProductType) => void;
+    removeProductFromCart: (product: ProductType) => void;
 }
 
 export const CartContext = createContext<ContextState>({
@@ -13,6 +14,13 @@ export const CartContext = createContext<ContextState>({
             "Something went wrong with adding " +
                 product.title +
                 " to the cart..."
+        );
+    },
+    removeProductFromCart: (product: ProductType) => {
+        console.log(
+            "Something went wrong with removing " +
+                product.title +
+                " from the cart..."
         );
     },
 });

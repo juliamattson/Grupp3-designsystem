@@ -30,16 +30,7 @@ export default class CartItem extends Component<Props, State> {
                     return (
                         <Row>
                             <Col>
-                                <Card
-                                    style={{
-                                        maxWidth: "90%",
-                                        maxHeight: "90%",
-                                        borderBottom: "none",
-                                        borderRight: "none",
-                                        borderLeft: "none",
-                                        borderTop: "none",
-                                    }}
-                                >
+                                <Card className="cartItemCard">
                                     <Card.Img
                                         src={img}
                                         style={{
@@ -56,6 +47,11 @@ export default class CartItem extends Component<Props, State> {
                                         <Button
                                             variant="light"
                                             className="quantityButton"
+                                            onClick={() => {
+                                                contextData.removeProductFromCart(
+                                                    this.props.cartItems.product
+                                                );
+                                            }}
                                         >
                                             -
                                         </Button>{" "}
@@ -63,6 +59,11 @@ export default class CartItem extends Component<Props, State> {
                                         <Button
                                             variant="light"
                                             className="quantityButton"
+                                            onClick={() => {
+                                                contextData.addProductToCart(
+                                                    this.props.cartItems.product
+                                                );
+                                            }}
                                         >
                                             +
                                         </Button>

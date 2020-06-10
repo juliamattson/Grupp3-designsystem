@@ -34,12 +34,44 @@ export class CartProvider extends Component<{}, ProviderState> {
         } else {
             let foundCartItem: any = clonedCart.find(
                 (cartItem: { product: ProductType; quantity: number }) => {
-                    return cartItem;
+                    if (cartItem.product.id === product.id) {
+                        return cartItem;
+                    }
                 }
             );
             if (foundCartItem != undefined) {
                 foundCartItem.quantity += 1;
             }
+        }
+
+        this.setState({ cartItems: clonedCart }, () => {
+            console.log(this.state);
+        });
+    };
+
+    removeProductFromCart = (product: ProductType) => {
+        let clonedCart = Object.assign([], this.state.cartItems);
+
+        let foundItemId = clonedCart.find(
+            (cartItem: { product: ProductType; quantity: number }) => {
+                return cartItem.product.id === product.id;
+            }
+        );
+
+        let foundCartItem: any = clonedCart.find(
+            (cartItem: { product: ProductType; quantity: number }) => {
+                if (cartItem.product.id === product.id) {
+                    return cartItem;
+                }
+            }
+        );
+        if (foundCartItem.quantity > 1) {
+            foundCartItem.quantity -= 1;
+        } else {
+            clonedCart = clonedCart.filter(
+                (cartItem: { product: ProductType; quantity: number }) =>
+                    cartItem.product.id != product.id
+            );
         }
 
         this.setState({ cartItems: clonedCart }, () => {
@@ -53,6 +85,7 @@ export class CartProvider extends Component<{}, ProviderState> {
                 value={{
                     ...this.state,
                     addProductToCart: this.addProductToCart,
+                    removeProductFromCart: this.removeProductFromCart,
                 }}
             >
                 {this.props.children}
