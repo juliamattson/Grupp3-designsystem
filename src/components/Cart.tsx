@@ -10,16 +10,24 @@ import "./cart.css";
 import CardGroup from "react-bootstrap/CardGroup";
 import { CartConsumer, ContextState } from "./context/cartContext";
 import CartItem from "./CartItem";
+import { shippingAlternatives, Shipping } from "../shipping";
 
-export interface State {}
+export interface State {
+    selectedShipping: Shipping;
+}
 
 export default class Cart extends Component<{}, State> {
+    state: State = {
+        selectedShipping: shippingAlternatives[0],
+    };
+
     render() {
-        let shippingCost = 39;
         return (
             <CartConsumer>
                 {(contextData: ContextState) => {
-                    const totalCost = contextData.getCartTotal() + shippingCost;
+                    const totalCost =
+                        contextData.getCartTotal() +
+                        this.state.selectedShipping.price;
                     const priceText = "Summa: " + totalCost + " kr";
                     const confirmButton = (
                         <Button variant="primary" style={{ marginTop: "10px" }}>
@@ -118,34 +126,28 @@ export default class Cart extends Component<{}, State> {
                                                 Välj fraktalternativ nedan.
                                             </Form.Text>
                                             <hr />
-                                            {["radio"].map((type) => (
-                                                <div
-                                                    key={`default-${type}`}
-                                                    className="mb-3"
-                                                >
+                                            {shippingAlternatives.map(
+                                                (shipping) => (
                                                     <Form.Check
                                                         type="radio"
-                                                        value="0"
-                                                        label="Postnord 0:- (Leverans inom 3-5 dagar)"
-                                                        name="formHorizontalRadios"
-                                                        id="postnord"
+                                                        value={shipping.id}
+                                                        label={`${shipping.name} ${shipping.price}:- (Leverans inom ${shipping.deliveryTime} timmar)"`}
+                                                        name={shipping.name}
+                                                        key={shipping.id}
+                                                        checked={
+                                                            shipping.id ===
+                                                            this.state
+                                                                .selectedShipping
+                                                                .id
+                                                        }
+                                                        onChange={() =>
+                                                            this.setState({
+                                                                selectedShipping: shipping,
+                                                            })
+                                                        }
                                                     />
-                                                    <Form.Check
-                                                        type="radio"
-                                                        value="39"
-                                                        label="DHL 39:- (Leverans inom 1-2 dagar)"
-                                                        name="formHorizontalRadios"
-                                                        id="dhl"
-                                                    />
-                                                    <Form.Check
-                                                        type="radio"
-                                                        value="69"
-                                                        label="Instabox 69:- (Levereras samma dag)"
-                                                        name="formHorizontalRadios"
-                                                        id="instabox"
-                                                    />
-                                                </div>
-                                            ))}
+                                                )
+                                            )}
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
