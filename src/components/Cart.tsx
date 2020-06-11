@@ -35,6 +35,9 @@ export default class Cart extends Component<{}, State> {
                             <Button
                                 variant="primary"
                                 style={{ marginTop: "10px" }}
+                                onClick={() => {
+                                    contextData.deleteProductsFromCart();
+                                }}
                             >
                                 Slutför köp
                             </Button>
