@@ -1,3 +1,4 @@
+
 export interface Shipping {
     id: number;
     name: string;
@@ -5,23 +6,25 @@ export interface Shipping {
     deliveryTime: number;
 }
 
+
 export const shippingAlternatives: Shipping[] = [
     {
         id: 0,
         name: "Postnord",
         price: 39,
-        deliveryTime: 72,
+        deliveryTime: 3,
     },
     {
         id: 1,
         name: "DHL",
         price: 79,
-        deliveryTime: 24,
+        deliveryTime: 2,
     },
     {
         id: 2,
         name: "Instabox",
         price: 200,
-        deliveryTime: 8,
+        deliveryTime: 1,
     },
 ];
+
