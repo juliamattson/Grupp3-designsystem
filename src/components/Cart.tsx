@@ -92,7 +92,7 @@ export default class Cart extends Component<{}, State> {
                                             Här ska info och alternativ av
                                             betalsätt finnas
                                             
-                                            <Payment></Payment>
+                                            <Payment />
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
