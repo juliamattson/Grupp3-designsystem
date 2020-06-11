@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink, Route, RouteComponentProps } from "react-router-dom";
 import { CartConsumer, ContextState } from "./context/cartContext";
 import { ProductType, storeProducts } from "../data";
-import "./details.css";
+import "./Details.css";
 
 interface Props extends RouteComponentProps<{ id: string }> {
     product: ProductType;

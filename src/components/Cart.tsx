@@ -22,6 +22,13 @@ export default class Cart extends Component<{}, State> {
         selectedShipping: shippingAlternatives[0],
     };
 
+    getDeliveryDate = (days: number) => {
+        let today = new Date();
+        let deliverySec = today.setDate(today.getDate() + days);
+        let deliveryDay = new Date(deliverySec).toLocaleDateString();
+        return deliveryDay
+    };
+
     render() {
         return (
             <CartConsumer>
@@ -44,6 +51,7 @@ export default class Cart extends Component<{}, State> {
                         </NavLink>
                     );
                     const momsShipping = "(Inklusive moms och frakt)";
+
                     return (
                         <div id="cartStyling">
                             <CardGroup>
@@ -135,7 +143,7 @@ export default class Cart extends Component<{}, State> {
                                                     <Form.Check
                                                         type="radio"
                                                         value={shipping.id}
-                                                        label={`${shipping.name} ${shipping.price}:- (Leverans inom ${shipping.deliveryTime} timmar)"`}
+                                                        label={`${shipping.name} ${shipping.price}:- (Leveransdatum:  ${this.getDeliveryDate(shipping.deliveryTime)})`}
                                                         name={shipping.name}
                                                         key={shipping.id}
                                                         checked={
