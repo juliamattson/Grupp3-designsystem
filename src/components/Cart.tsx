@@ -83,12 +83,6 @@ export default class Cart extends Component<{}, State> {
                                                     placeholder="Adress"
                                                 />
                                             </Form.Group>
-                                            <Button
-                                                variant="primary"
-                                                type="submit"
-                                            >
-                                                Spara
-                                            </Button>
                                         </Form>
                                     </Card.Body>
                                 </Card>
