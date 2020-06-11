@@ -11,14 +11,17 @@ import CardGroup from "react-bootstrap/CardGroup";
 import { CartConsumer, ContextState } from "./context/cartContext";
 import CartItem from "./CartItem";
 import { shippingAlternatives, Shipping } from "../shipping";
+import Payment from './pay';
 
 export interface State {
     selectedShipping: Shipping;
+    // selectedPayment: Payment;
 }
 
 export default class Cart extends Component<{}, State> {
     state: State = {
         selectedShipping: shippingAlternatives[0],
+        //selectedPayment: paymentAlternatives[0],
     };
 
     render() {
@@ -88,33 +91,8 @@ export default class Cart extends Component<{}, State> {
                                         <Card.Text>
                                             Här ska info och alternativ av
                                             betalsätt finnas
-                                            <Form>
-                                                {["radio"].map((type) => (
-                                                    <div
-                                                        key={`default-${type}`}
-                                                        className="mb-3"
-                                                    >
-                                                        <Form.Check
-                                                            type="radio"
-                                                            label="Kort "
-                                                            name="formHorizontalRadios"
-                                                            id="formHorizontalRadios1"
-                                                        />
-                                                        <Form.Check
-                                                            type="radio"
-                                                            label="Swish "
-                                                            name="formHorizontalRadios"
-                                                            id="formHorizontalRadios2"
-                                                        />
-                                                        <Form.Check
-                                                            type="radio"
-                                                            label="Pay Pal"
-                                                            name="formHorizontalRadios"
-                                                            id="formHorizontalRadios3"
-                                                        />
-                                                    </div>
-                                                ))}
-                                            </Form>
+                                            
+                                            <Payment></Payment>
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
@@ -149,6 +127,7 @@ export default class Cart extends Component<{}, State> {
                                                 )
                                             )}
                                         </Card.Text>
+                                       
                                     </Card.Body>
                                 </Card>
                                 <Card>
