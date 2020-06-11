@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./Navbar";
+import { NavLink } from "react-router-dom";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Card from "react-bootstrap/Card";
@@ -30,9 +31,14 @@ export default class Cart extends Component<{}, State> {
                         this.state.selectedShipping.price;
                     const priceText = "Summa: " + totalCost + " kr";
                     const confirmButton = (
-                        <Button variant="primary" style={{ marginTop: "10px" }}>
-                            Slutför köp
-                        </Button>
+                        <NavLink to="/checkout">
+                            <Button
+                                variant="primary"
+                                style={{ marginTop: "10px" }}
+                            >
+                                Slutför köp
+                            </Button>
+                        </NavLink>
                     );
                     const momsShipping = "(Inklusive moms och frakt)";
                     return (

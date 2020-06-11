@@ -7,6 +7,7 @@ import ProductList from "./ProductList";
 import Details from "./Details";
 import Cart from "./Cart";
 import Default from "./Default";
+import Checkout from "./Checkout";
 import { CartProvider } from "./context/cartProvider";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                     <Route exact path="/" component={ProductList} />
                     <Route path="/details/:id" component={Details} />
                     <Route path="/cart" component={Cart} />
+                    <Route path="/checkout" component={Checkout} />
                     <Route component={Default} />
                 </Switch>
             </React.Fragment>
