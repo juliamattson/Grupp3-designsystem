@@ -97,6 +97,16 @@ export class CartProvider extends Component<{}, ProviderState> {
         return numOfItems;
     };
 
+    deleteProductsFromCart = () => {
+        let clonedCart = Object.assign([], this.state.cartItems);
+
+        clonedCart = [];
+
+        this.setState({ cartItems: clonedCart }, () => {
+            console.log(this.state);
+        });
+    };
+
     render() {
         return (
             <CartContext.Provider
@@ -104,6 +114,7 @@ export class CartProvider extends Component<{}, ProviderState> {
                     ...this.state,
                     addProductToCart: this.addProductToCart,
                     removeProductFromCart: this.removeProductFromCart,
+                    deleteProductsFromCart: this.deleteProductsFromCart,
                     getCartTotal: this.getCartTotal,
                     getNumOfItems: this.getNumOfItems,
                 }}
