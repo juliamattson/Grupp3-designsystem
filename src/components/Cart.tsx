@@ -57,7 +57,7 @@ export default class Cart extends Component<{}, State> {
                             variant="primary"
                             style={{ marginTop: "10px" }}
                         >
-                            Slutför köp
+                            Tack för din beställning!
                         </Button>
                     );
 
