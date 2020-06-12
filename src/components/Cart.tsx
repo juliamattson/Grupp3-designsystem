@@ -37,7 +37,7 @@ export default class Cart extends Component<{}, State> {
             /* const history = useHistory();
             history.push("/checkout"); */
 
-            alert("Slutfört Köp");
+            alert("Tack för din beställning!");
         }
 
         this.setState({ validated: true });
@@ -57,7 +57,7 @@ export default class Cart extends Component<{}, State> {
                             variant="primary"
                             style={{ marginTop: "10px" }}
                         >
-                            Tack för din beställning!
+                            Slutför köp
                         </Button>
                     );
 
