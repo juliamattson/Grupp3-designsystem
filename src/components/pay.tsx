@@ -16,7 +16,7 @@ export default class Payment extends Component {
           
         <Form.Group  >
             
-          <Form.Check checked={selected =='CreditCard'} value="CreditCard" type="radio" label="CreditCard" onChange={this.handleChange}/>
+          <Form.Check    checked={selected =='CreditCard'} value="CreditCard" type="radio" label="CreditCard" onChange={this.handleChange}/>
              {this.state.selected === 'CreditCard' && <CreditCard/>}
 
 
