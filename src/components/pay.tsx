@@ -5,7 +5,7 @@ import PayPalForm from './PayPalForm';
 import SwishForm from './SwishForm';
 
 export default class Payment extends Component {
-    state = { selected: "" };
+    state = { selected: 'CreditCard' };
     handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       this.setState({ selected: e.target.value });
     };
