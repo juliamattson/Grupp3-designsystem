@@ -16,16 +16,16 @@ export default class Payment extends Component {
           
         <Form.Group  >
             
-          <Form.Check  value="CreditCard" type="radio" label="CreditCard" onChange={this.handleChange}/>
+          <Form.Check checked={selected =='CreditCard'} value="CreditCard" type="radio" label="CreditCard" onChange={this.handleChange}/>
              {this.state.selected === 'CreditCard' && <CreditCard/>}
 
 
-             <Form.Check value="swish" type="radio" label="Swish" onChange={this.handleChange}/>
+             <Form.Check checked={selected =='swish'} value="swish" type="radio" label="Swish" onChange={this.handleChange}/>
             {this.state.selected === 'swish' && <SwishForm/>}
 
 
 
-            <Form.Check  value="PayPal" type="radio" label="PayPal" onChange={this.handleChange}
+            <Form.Check checked={selected =='PayPal'}  value="PayPal" type="radio" label="PayPal" onChange={this.handleChange}
             />
             {this.state.selected === 'PayPal' && <PayPalForm/>}
            
