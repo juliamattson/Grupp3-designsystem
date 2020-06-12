@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NavBar from "./Navbar";
-import { NavLink } from "react-router-dom";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Card from "react-bootstrap/Card";
@@ -22,13 +21,6 @@ export default class Cart extends Component<{}, State> {
         selectedShipping: shippingAlternatives[0],
     };
 
-    getDeliveryDate = (days: number) => {
-        let today = new Date();
-        let deliverySec = today.setDate(today.getDate() + days);
-        let deliveryDay = new Date(deliverySec).toLocaleDateString();
-        return deliveryDay
-    };
-
     render() {
         return (
             <CartConsumer>
@@ -38,19 +30,13 @@ export default class Cart extends Component<{}, State> {
                         this.state.selectedShipping.price;
                     const priceText = "Summa: " + totalCost + " kr";
                     const confirmButton = (
-                        <NavLink to="/checkout">
-                            <Button
-                                variant="primary"
-                                style={{ marginTop: "10px" }}
-                                onClick={() => {
-                                    contextData.deleteProductsFromCart();
-                                }}
-                            >
-                                Slutför köp
-                            </Button>
-                        </NavLink>
+                        <Button variant="primary" style={{ marginTop: "10px" }}>
+                            Slutför köp
+                        </Button>
                     );
-                    const momsShipping = "(Inklusive moms och frakt)";
+                    let today = new Date();
+                    let deliveryDate = today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate();
+         
 
                     return (
                         <div id="cartStyling">
@@ -143,7 +129,7 @@ export default class Cart extends Component<{}, State> {
                                                     <Form.Check
                                                         type="radio"
                                                         value={shipping.id}
-                                                        label={`${shipping.name} ${shipping.price}:- (Leveransdatum:  ${this.getDeliveryDate(shipping.deliveryTime)})`}
+                                                        label={`${shipping.name} ${shipping.price}:- (Leverans:  ${deliveryDate + shipping.deliveryTime})`}
                                                         name={shipping.name}
                                                         key={shipping.id}
                                                         checked={
@@ -189,11 +175,6 @@ export default class Cart extends Component<{}, State> {
                                                 ? priceText
                                                 : ""}
                                         </h4>
-                                        <h6>
-                                            {contextData.getNumOfItems() > 0
-                                                ? momsShipping
-                                                : ""}
-                                        </h6>
                                         {contextData.getNumOfItems() > 0
                                             ? confirmButton
                                             : ""}
