@@ -92,9 +92,10 @@ export default class Cart extends Component<{}, State> {
                                     <Card.Body>
                                         <Card.Title>Betalsätt</Card.Title>
                                         <Card.Text>
-                                            Här ska info och alternativ av
-                                            betalsätt finnas
-                                            
+                                        <Form.Text className="text-muted">
+                                                Välj betalsätt nedan.
+                                            </Form.Text>
+                                            <hr />
                                             <Payment />
                                         </Card.Text>
                                     </Card.Body>
