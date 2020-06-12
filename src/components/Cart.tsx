@@ -13,6 +13,7 @@ import CartItem from "./CartItem";
 import { shippingAlternatives, Shipping } from "../shipping";
 import { useHistory } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import Payment from "./pay";
 
 export interface State {
     selectedShipping: Shipping;
@@ -125,33 +126,11 @@ export default class Cart extends Component<{}, State> {
                                         <Card.Body>
                                             <Card.Title>Betalsätt</Card.Title>
                                             <Card.Text>
-                                                Här ska info och alternativ av
-                                                betalsätt finnas
-                                                {["radio"].map((type) => (
-                                                    <div
-                                                        key={`default-${type}`}
-                                                        className="mb-3"
-                                                    >
-                                                        <Form.Check
-                                                            type="radio"
-                                                            label="Kort "
-                                                            name="formHorizontalRadios"
-                                                            id="formHorizontalRadios1"
-                                                        />
-                                                        <Form.Check
-                                                            type="radio"
-                                                            label="Swish "
-                                                            name="formHorizontalRadios"
-                                                            id="formHorizontalRadios2"
-                                                        />
-                                                        <Form.Check
-                                                            type="radio"
-                                                            label="Pay Pal"
-                                                            name="formHorizontalRadios"
-                                                            id="formHorizontalRadios3"
-                                                        />
-                                                    </div>
-                                                ))}
+                                                <Form.Text className="text-muted">
+                                                    Välj betalsätt nedan.
+                                                </Form.Text>
+                                                <hr />
+                                                <Payment />
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>
@@ -235,7 +214,6 @@ export default class Cart extends Component<{}, State> {
                                     </Card>
                                 </CardGroup>
                             </Form>
-                            <div></div>
                         </div>
                     );
                 }}
